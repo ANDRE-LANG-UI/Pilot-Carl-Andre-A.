@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e4cfcf;
+            color: #5a3e3e;
+            margin: 0;
+        }
+
+        /* Hero Section Styling */
+#home {
+    position: relative; /* Needed for pseudo-element positioning */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #000000;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./we.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Apply blur effect */
+    z-index: 0; /* Keeps it behind the content */
+}
+
+
+#home .container {
+    position: relative; /* To ensure content is above the blurred background */
+    z-index: 1;
+    padding-top: 26vh; /* Adjusts content's vertical position */
+}
+
+        
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 20vh;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+       /* Navbar Styling */
+       .navbar {
+            background-color: #e4cfcf;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #5a3e3e;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        .navbar .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #5a3e3e;
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        .navbar-toggler {
+            border-color: #5a3e3e;
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2C3E50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 0.75rem;
+            color: #5a3e3e;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Image Styling */
+        .custom-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Venue Section Styling */
+        #venue {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        #venue .row img {
+            margin-bottom: 15px;
+        }
+
+
+/* Footer Styling */
+.footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    border-top: 2px solid #d9534f;
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    color: #5a3e3e;
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+
+
+  <!-- Hero Section -->
+<section id="home" class="py-5" style="background-color: #f4e1d2;">
+    <div class="container text-center">  
+        <h2 class="section-title mb-4">RSVP</h2> <!-- Optional section title -->
+        
+ <!-- RSVP Section -->
+<form id="rsvpForm" action="#" class="rsvp-form shadow-lg p-4 rounded bg-white">
+    <div class="mb-4">
+        <label for="name" class="form-label fs-5" style="font-weight: bold;">Full Name</label>
+        <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your full name" required>
+    </div>
+    <div class="mb-4">
+        <label for="email" class="form-label fs-5" style="font-weight: bold;">Email</label>
+        <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter your email address" required>
+    </div>
+    <div class="mb-4">
+        <label for="attendance" class="form-label fs-5" style="font-weight: bold;">Will you be attending?</label>
+        <select class="form-select form-select-lg" id="attendance" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="maybe">Maybe</option>
+        </select>
+    </div>
+    
+    <!-- Success Message (Initially Hidden) -->
+    <div id="successMessage" class="text-center mt-4" style="display: none;">
+        <h4 class="text-success">You've successfully submitted your RSVP!</h4>
+        <p class="text-success">Thank you for your response. We look forward to seeing you at the event!</p>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-danger btn-lg w-100">Submit RSVP</button>
+    </div>
+</form>
+
+<script>
+// JavaScript function to handle form submission
+document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from reloading the page
+
+    // Hide the form fields and show the success message
+    document.getElementById('successMessage').style.display = 'block';
+    // Optionally disable the form to prevent resubmission
+    document.getElementById('rsvpForm').reset(); // Reset the form after submission (optional)
+    // Disable form fields after submission (optional)
+    Array.from(document.querySelectorAll('.form-control, .form-select')).forEach(input => input.disabled = true);
+});
+</script>
+
+<style>
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #5a3e3e;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* RSVP Section Styling */
+.rsvp {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.rsvp-header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #5a3e3e;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.rsvp-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Form Styling */
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rsvp-form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields Styling */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.5);
+    border-color: #ff6347;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Button Styling */
+.btn-danger {
+    background-color: #ff6347;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #e53e30;
+    transform: translateY(-5px);
+}
+
+.btn-danger:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .rsvp-form {
+        padding: 20px;
+    }
+}
+</style>
+
+
+</style>
+      
+    </div>
+</section>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./ring-removebg-preview.png" alt="Wedding Planner Logo" class="logo">
+            <span>WEDDING</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="our story.html">Our Story</a></li>
+                <li class="nav-item"><a class="nav-link" href="guests.html">Guests</a></li>
+                <li class="nav-item"><a class="nav-link" href="venue.html">Venue</a></li>
+                <li class="nav-item"><a class="nav-link" href="itinerary.html">Itinerary</a></li>
+                <li class="nav-item"><a class="nav-link" href="registry.html">Registry</a></li>
+                <li class="nav-item"><a class="nav-link" href="rsvp.html">RSVP</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<style>
+    /* Section Title */
+    .section-title {
+        font-size: 3rem;
+        font-family: 'Playfair Display', serif;
+        color: #5a3e3e;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    
+    /* Section Subtitle */
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #5a3e3e;
+        margin-bottom: 30px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Venue Section - General Styling */
+#venue {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: #f4e1d2;
+}
+
+/* Custom Image Styling for Venue Cards */
+.custom-img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.custom-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Caption Styling */
+.venue-caption {
+    font-size: 1rem;
+    color: #5a3e3e;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .venue-card {
+        margin-bottom: 20px; /* Add space between stacked images */
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+
+    .custom-img {
+        width: 100%;
+        height: 300px; /* Adjusted height */
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease; /* Add hover effect */
+    }
+    
+    .custom-img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    /* Venue Caption Styling */
+    .venue-caption {
+        font-size: 1rem;
+        color: #5a3e3e;
+        margin-top: 10px;
+        font-style: italic;
+    }
+</style>
+
+
+<!-- Footer Section -->
+<footer class="footer text-center">
+    <p class="footer-text">© 2024 Jerick & Cassy | All rights reserved</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    /* Simple Footer Styling */
+.footer {
+    background-color: #f8f9fa; /* Light background color */
+    color: #5a3e3e; /* Dark text color for contrast */
+    padding: 20px 0; /* Padding for spacing */
+    font-size: 1rem; /* Standard text size */
+    font-family: 'Arial', sans-serif; /* Simple font */
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 1rem;
+    color: #5a3e3e;
+}
+
+</style>
+</body>
+</html>

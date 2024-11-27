@@ -1,0 +1,240 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Navbar Styling */
+.navbar {
+    margin-bottom: 0;
+}
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(./we.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Section Styling */
+.story, .venue, .itinerary, .registry, .rsvp {
+    padding: 50px 0;
+    background-color: #e4cfcf;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h1, .itinerary h1, #Guest h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+}
+
+.story img, .venue img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Itinerary Section */
+.itinerary {
+    background-color: #e4cfcf;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
+}
+
+.itinerary-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.itinerary-list ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.itinerary-list ul li:last-child {
+    border-bottom: none;
+}
+
+.time {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.event {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Brand Section */
+.brand-container {
+    display: flex;
+    align-items: center;
+}
+
+.brand-text {
+    font-family: 'Cursive', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #5a3e3e;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Groomsmen and Bridesmaids Section */
+#fh5co-guest .groom-men,
+#fh5co-guest .bridesmaid-image-container {
+    margin: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#fh5co-guest img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#fh5co-guest img:hover {
+    transform: scale(1.05);
+}
+
+#fh5co-guest h3 {
+    font-size: 1.25rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* RSVP Section */
+#fh5co-started {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 80px 0;
+    color: #fff;
+    text-align: center;
+}
+
+#fh5co-started .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#fh5co-started .heading-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+#fh5co-started .form-inline {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+#fh5co-started .form-inline .form-control,
+#fh5co-started .form-inline .btn {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#fh5co-started .form-inline .btn {
+    background-color: #ff5e5e;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#fh5co-started .form-inline .btn:hover {
+    background-color: #ff3a3a;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-image.jpg');
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+

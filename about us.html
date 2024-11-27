@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e4cfcf;
+            color: #5a3e3e;
+            margin: 0;
+        }
+
+        /* Hero Section Styling */
+#home {
+    position: relative; /* Needed for pseudo-element positioning */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #000000;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./we.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Apply blur effect */
+    z-index: 0; /* Keeps it behind the content */
+}
+
+
+#home .container {
+    position: relative; /* To ensure content is above the blurred background */
+    z-index: 1;
+}
+
+        
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 20vh;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+       /* Navbar Styling */
+       .navbar {
+            background-color: #e4cfcf;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #5a3e3e;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        .navbar .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #5a3e3e;
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        .navbar-toggler {
+            border-color: #5a3e3e;
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2C3E50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 0.75rem;
+            color: #5a3e3e;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Image Styling */
+        .custom-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Venue Section Styling */
+        #venue {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        #venue .row img {
+            margin-bottom: 15px;
+        }
+
+
+/* Footer Styling */
+.footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    border-top: 2px solid #d9534f;
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    color: #5a3e3e;
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section id="home" class="py-5" style="background-color: #f4e1d2;">
+    <div class="container text-center">
+        <h2 class="section-title mb-4">About Us</h2>
+        <div class="row g-4 mt-3">
+            <!-- About Cassy -->
+            <div class="col-md-6">
+                <div class="about-item">
+                    <h3 class="about-link">About LAURA</h3>
+                    <p class="about-text">
+                        LAURA is a radiant soul with a creative spirit and a kind heart. Known for her compassion and artistic nature, she has a gift for seeing beauty in the simplest of things. Her love for [insert hobbies or passions, e.g., “nature and art” or “travel and storytelling”] brings warmth and light to every day, making those around her feel inspired and cherished.
+                    </p>
+                    
+                    <div class="about-img-wrapper">
+                        <img src="./woman-wearing-white-wedding-dress-veil_964739-17018.avif" alt="Cassy's Photo" class="about-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Jerick -->
+            <div class="col-md-6">
+                <div class="about-item">
+                    <h3 class="about-link">About MARCO</h3>
+                    <p class="about-text">
+                        MARCO is a blend of strength and warmth, with a love for [insert hobbies or passions, e.g., “outdoor adventures” or “music and family”]. He’s known for his loyalty, easy-going charm, and a dedication that makes everyone around him feel valued and appreciated. Friends and family admire his playful sense of humor and his steady, dependable nature.
+                    </p>
+                    <div class="about-img-wrapper">
+                        <img src="./groom 2.jpg" alt="Jerick's Photo" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+/* Improved Typography for "About Cassy" */
+
+/* Section Title */
+.about-link {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 2.2rem; /* Adjust the size for prominence */
+    font-weight: 700; /* Make the heading bold */
+    color: #333; /* Darker color for better contrast */
+    letter-spacing: 2px; /* Add letter spacing for an elegant feel */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Uppercase for a more refined look */
+}
+
+/* About Text */
+.about-text {
+    font-family: 'Lora', serif; /* Elegant serif font for body text */
+    font-size: 1.15rem; /* Slightly larger body text for readability */
+    color: #555; /* Softer color for body text */
+    line-height: 1.8; /* Increased line height for better readability */
+    text-align: justify; /* Justified text alignment */
+    margin-bottom: 20px;
+}
+
+/* Apply Google Fonts (Add this to the head section of your HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap');
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* About Item Text Styling */
+.about-item {
+    margin-bottom: 30px;
+}
+
+/* About Title */
+.about-link {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* About Text */
+.about-text {
+    font-size: 1.1rem;
+    color: #000;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Style for the image container */
+.about-img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Image Styling */
+.about-img {
+    width: 80%;
+    height: 750px; /* Fixed height for consistency */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for images */
+.about-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+    .about-link {
+        font-size: 1.8rem; /* Adjust title size */
+    }
+
+    .about-text {
+        font-size: 1rem; /* Adjust text size */
+    }
+
+/* Container Padding */
+.container {
+    padding-top: 50px;
+}
+
+</style>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./ring-removebg-preview.png" alt="Wedding Planner Logo" class="logo">
+            <span>WEDDING</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="our story.html">Our Story</a></li>
+                <li class="nav-item"><a class="nav-link" href="guests.html">Guests</a></li>
+                <li class="nav-item"><a class="nav-link" href="venue.html">Venue</a></li>
+                <li class="nav-item"><a class="nav-link" href="itinerary.html">Itinerary</a></li>
+                <li class="nav-item"><a class="nav-link" href="registry.html">Registry</a></li>
+                <li class="nav-item"><a class="nav-link" href="rsvp.html">RSVP</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<style>
+    /* Section Title */
+    .section-title {
+        font-size: 3rem;
+        font-family: 'Playfair Display', serif;
+        color: #5a3e3e;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    
+    /* Section Subtitle */
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #5a3e3e;
+        margin-bottom: 30px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Venue Section - General Styling */
+#venue {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: #f4e1d2;
+}
+
+/* Custom Image Styling for Venue Cards */
+.custom-img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.custom-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Caption Styling */
+.venue-caption {
+    font-size: 1rem;
+    color: #5a3e3e;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .venue-card {
+        margin-bottom: 20px; /* Add space between stacked images */
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+
+    .custom-img {
+        width: 100%;
+        height: 300px; /* Adjusted height */
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease; /* Add hover effect */
+    }
+    
+    .custom-img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    /* Venue Caption Styling */
+    .venue-caption {
+        font-size: 1rem;
+        color: #5a3e3e;
+        margin-top: 10px;
+        font-style: italic;
+    }
+</style>
+
+
+<!-- Footer Section -->
+<footer class="footer text-center">
+    <p class="footer-text">© 2024 Jerick & Cassy | All rights reserved</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    /* Simple Footer Styling */
+.footer {
+    background-color: #f8f9fa; /* Light background color */
+    color: #5a3e3e; /* Dark text color for contrast */
+    padding: 20px 0; /* Padding for spacing */
+    font-size: 1rem; /* Standard text size */
+    font-family: 'Arial', sans-serif; /* Simple font */
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 1rem;
+    color: #5a3e3e;
+}
+
+</style>
+</body>
+</html>
